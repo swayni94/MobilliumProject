@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="mobilliumViewModel"
+            type="com.example.mobilliumproject.viewModelsAndFactory.MobilliumViewModel" />
+    </data>
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:ignore="ScrollViewCount">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_light_background"
+        android:orientation="vertical"
+        tools:ignore="PrivateResource">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/eliptical_toolbar"
+            android:backgroundTint="@color/white"
+            android:scrollbarDefaultDelayBeforeFade="@integer/config_navAnimTime"
+            app:navigationIcon="@mipmap/ic_launcher_menu">
+
+            <EditText
+                android:id="@+id/toolbar_SearchText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="@string/searchHintText"
+                android:textColor="@color/darkGray"
+                android:textColorHint="@color/darkGray"
+                android:textStyle="bold"
+                android:layout_marginEnd="50dp"/>
+
+            <Button
+                android:id="@+id/toolbar_SpeechButton"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_mic_black_24dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/sliderView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/sliderView_tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    />
+            </androidx.viewpager.widget.ViewPager>
+            <!-- product/!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/darkGray"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="23dp"
+                    android:layout_marginEnd="150dp"
+                    android:padding="2dp"
+                    android:textSize="15sp"
+                    android:text="@string/featuredText"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_height="23dp"
+                    android:padding="2dp"
+                    android:textSize="15sp"
+                    android:text="@string/featuredText2"
+                    android:textStyle="normal" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/product_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="271dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layoutAnimation="@anim/recyclerview_layout_animation"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:orientation="horizontal" />
+            </LinearLayout>
+            <!-- category/!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/darkGray"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="23dp"
+                    android:layout_marginEnd="150dp"
+                    android:padding="2dp"
+                    android:textSize="15sp"
+                    android:text="@string/category_title"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/category_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layoutAnimation="@anim/recyclerview_layout_animation"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:orientation="horizontal" />
+            </LinearLayout>
+            <!-- collection/!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/darkGray"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="23dp"
+                    android:layout_marginEnd="150dp"
+                    android:padding="2dp"
+                    android:textSize="15sp"
+                    android:text="@string/collection_title"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/collection_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layoutAnimation="@anim/recyclerview_layout_animation"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:orientation="horizontal" />
+            </LinearLayout>
+            <!-- editor_shop/!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/darkGray"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginEnd="110dp"
+                    android:padding="2dp"
+                    android:text="@string/editorshops_title"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_height="23dp"
+                    android:padding="2dp"
+                    android:textSize="15sp"
+                    android:text="@string/featuredText2"
+                    android:textStyle="normal" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/editor_shop_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layoutAnimation="@anim/recyclerview_layout_animation"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:orientation="horizontal" />
+            </LinearLayout>
+            <!-- new_shops/!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@color/darkGray"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginEnd="160dp"
+                    android:padding="2dp"
+                    android:text="@string/newshops_title"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_height="23dp"
+                    android:padding="2dp"
+                    android:textSize="15sp"
+                    android:text="@string/featuredText2"
+                    android:textStyle="normal" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/new_shops_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layoutAnimation="@anim/recyclerview_layout_animation"
+                    tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:orientation="horizontal" />
+            </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</layout>
